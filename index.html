@@ -24,24 +24,28 @@
 		<main>
 			<section class="form">
 				<h2>To-Do Form</h2>
-				<form>
-					<label>
-						<input
-							type="text"
-							class="form__todo-task"
-							maxlength="50"
-							id="to-do"
-							name="toDo"
-							placeholder="Write your to do here.."
-							required
-						/>
-					</label>
-					<button class="form__btn" type="submit" value="Add">Add</button>
+				<form id="form">
+					<div class="form__wrapper">
+						<label>
+							<input
+								type="text"
+								class="form__todo-task"
+								maxlength="50"
+								id="to-do"
+								name="toDo"
+								placeholder="Write your to do here.."
+								required
+							/>
+						</label>
+						<button class="form__btn" type="submit" value="Add">Add</button>
+					</div>
 				</form>
 			</section>
 			<section class="todos">
 				<h2>To-Do List</h2>
-				<ul class="todos-list"></ul>
+				<ul class="todos-list">
+				<li class="todos__default">	No Tasks</li>
+				</ul>
 			</section>
 		</main>
 	</body>

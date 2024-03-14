@@ -1,10 +1,19 @@
-const list = document.querySelector(".todos-list");
+//State
+let taskCount = 0;
 
+//Queries
+const list = document.querySelector(".todos-list");
 const form = document.querySelector("form");
+const taskDefault = document.querySelector(".todos__default");
+
+//Events
 form.addEventListener("submit", handleSubmit);
 
+//Functions
 function handleSubmit(e) {
 	markAsComplete, e.preventDefault();
+	taskCount++;
+	taskDefault.style.display = "none";
 
 	const li = document.createElement("li");
 	li.classList.add("todos-item");
@@ -30,15 +39,15 @@ function handleSubmit(e) {
 
 function removeItem(e) {
 	e.preventDefault();
-
 	if (e.target.id == "delete") {
 		e.currentTarget.remove();
+		taskCount--;
+		if (!taskCount) taskDefault.style.display = "block";
 	}
 }
 function markAsComplete(e) {
 	e.preventDefault();
-	if (e.target.id == "mark-done") {
-		e.target.checked;
-		console.log(e.target, "mark as complete");
+	if (e.target.classList.contains("todos__text")) {
+		e.target.classList.toggle("completed");
 	}
 }

@@ -1,18 +1,13 @@
-
-
-
-*{
+* {
 	padding: 0;
-		font-family: "Poppins", sans-serif;
-		font-weight: 400;
-		font-style: normal;
-	
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 body {
-	background: #F0F3FF;
+	background: #f0f3ff;
 	margin: 0;
 	padding: 0;
-	
 }
 
 header {
@@ -21,9 +16,9 @@ header {
 	place-items: center;
 	color: white;
 	height: 15em;
-	box-shadow: 0px 15px 10px -15px black; 
+	box-shadow: 0px 15px 10px -15px black;
 }
-nav{
+nav {
 	display: flex;
 	justify-content: space-around;
 	width: 20%;
@@ -35,10 +30,10 @@ nav a {
 	font-size: 1.3rem;
 	transition: all 250ms ease-in-out;
 	padding: 8px 16px;
-	box-shadow: 1px 1px 3px #ECF2FF;
+	box-shadow: 1px 1px 3px #ecf2ff;
 }
 nav a:hover {
-	box-shadow: 1px 2px 8px #ECF2FF;
+	box-shadow: 1px 2px 8px #ecf2ff;
 }
 
 main {
@@ -49,17 +44,22 @@ main {
 	height: 50vh;
 	max-height: 50vh;
 }
-.form{
-padding-top: 1em;
+.form {
+	padding-top: 1em;
+}
+.form__wrapper {
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr 70px;
 }
 
 .form__todo-task {
-	width: 50%;
 	padding: 10px 20px;
 	outline: none;
 	border: 0.5px solid #31363f78;
 	border-radius: 5px;
 	font-size: 1.3rem;
+	width: 90%;
 }
 .form__btn {
 	color: white;
@@ -75,9 +75,8 @@ padding-top: 1em;
 .form__btn:hover {
 	background: #4caf4fcc;
 }
-.todos{
+.todos {
 	padding: 0;
-	
 }
 .todos-list {
 	font-size: 1.3rem;
@@ -87,30 +86,34 @@ padding-top: 1em;
 	overflow-y: auto;
 	padding: none;
 	margin: none;
-	
-	
-	
 }
-
+.todos__default {
+	color: rgba(128, 128, 128, 0.349);
+	font-size: 124px;
+	font-weight: 900;
+	opacity: 0.2;
+	box-shadow: 1px 3px 3px rgb(208, 205, 205);
+}
 
 .todos-item {
 	list-style: none;
 	display: grid;
 	grid-template-columns: 1fr 70px;
-	margin-bottom: .2em;
 	align-items: center;
 	gap: 5px;
 }
-.todos__text{
-	text-decoration: line-through;
+.todos__text {
 	text-transform: capitalize;
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.578);
 	padding: 10px 20px;
 	transition: all 250ms ease-in-out;
 	cursor: pointer;
 }
-.todos__text:hover{
+.todos__text:hover {
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.578);
+}
+.completed {
+	text-decoration: line-through;
 }
 .delete-btn {
 	background: #d04848;
@@ -126,17 +129,15 @@ padding-top: 1em;
 	background: #d04848e5;
 }
 
-
-@media(width <= 500px){
-	nav{
+@media (width < 768px) {
+	nav {
 		display: block;
 		width: 100%;
 		text-align: center;
 	}
 	nav a {
-		margin-inline: .5em;
+		margin-inline: 0.5em;
 	}
-
 
 	main {
 		display: grid;
@@ -145,10 +146,20 @@ padding-top: 1em;
 		padding: 1em;
 	}
 
-.form__todo-task {
-	width: fit-content;
+	.form__todo-task {
+		width: fit-content;
+	}
 }
-
-
-
+@media (width > 768px) and (width < 1200px) {
+	nav {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	nav a {
+		margin-inline: 0.5em;
+	}
+	.todos__default {
+		font-size: 84px;
+	}
 }
